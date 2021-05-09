@@ -1,0 +1,11 @@
+certifi==2020.12.5
+chardet==4.0.0
+decorator==5.0.7
+idna==2.10
+jsonpath-ng==1.5.2
+Pillow==8.2.0
+ply==3.11
+requests==2.25.1
+six==1.16.0
+urllib3==1.26.4
+validators==0.18.2
