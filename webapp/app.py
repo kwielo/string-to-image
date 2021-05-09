@@ -1,11 +1,10 @@
 import web
 import logging
 from urllib.parse import parse_qs
-from webapp.draw_text import DrawText
-from webapp.validation import check_json_path, check_url, check_font
-from webapp.utils import *
-
-from webapp.exceptions import QueryParameterError
+from draw_text import DrawText
+from validation import check_json_path, check_url, check_font
+from utils import *
+from exceptions import QueryParameterError
 
 logger = logging.getLogger(__name__)
 
