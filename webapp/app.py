@@ -1,8 +1,6 @@
 import web
-import logging, requests
+import logging
 from urllib.parse import parse_qs
-from jsonpath_ng import parse
-from requests import RequestException
 from webapp.draw_text import DrawText
 from webapp.validation import check_json_path, check_url, check_font
 from webapp.utils import *
@@ -16,7 +14,7 @@ urls = (
     '/api/v1/json-to-image', 'api_v1_json_to_image',
 )
 app = web.application(urls, globals())
-
+application = app.wsgifunc()
 
 def generate_and_return_image(text, font_name, font_size):
     filepath = get_filepath(get_filename([text, font_name, font_size]))
@@ -64,7 +62,7 @@ class api_v1_json_to_image:
 
         try:
             text = get_json_value(json_url, json_path)
-        except RequestException:
+        except Exception:
             text = f"'json_url' has invalid or wrong url"
 
         web.header('Content-type', 'image/png')
