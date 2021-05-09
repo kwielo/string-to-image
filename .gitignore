@@ -1,4 +1,6 @@
 .idea
 .venv
-src/tmp
+tmp
+webapp/tmp
+webapp/settings.py
 **/__pycache__
