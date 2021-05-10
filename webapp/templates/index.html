@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>String To Image</title>
+</head>
+<body>
+    <h1>String to image API</h1>
+
+    <article>
+        <h2>Usage</h2>
+        <p>
+            Parameters for <code>/api/v1/string-to-image</code>
+            <ul>
+                <li>text</li>
+                <li>font_name</li>
+                <li>font_size</li>
+            </ul>
+        </p>
+        <p>
+            Parameters for <code>/api/v1/json-to-image</code>
+            <ul>
+                <li>json_url</li>
+                <li>json_path</li>
+                <li>font_name</li>
+                <li>font_size</li>
+            </ul>
+        </p>
+        <h3>Examples</h3>
+        <p>
+            <code>
+                http://localhost:8080?text=2.12.2-rc.10&font_size=40
+            </code>
+        </p>
+        <p>
+            <code>
+                http://localhost:8080/api/v1/json-to-image?json_url=https://example.com/version.json&json_path=version
+            </code>
+        </p>
+    </article>
+</body>
+</html>

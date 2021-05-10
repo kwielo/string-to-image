@@ -9,11 +9,13 @@ from exceptions import QueryParameterError
 logger = logging.getLogger(__name__)
 
 urls = (
+    '/', 'index',
     '/api/v1/string-to-image',  'api_v1_string_to_image',
     '/api/v1/json-to-image', 'api_v1_json_to_image',
 )
 app = web.application(urls, globals())
 application = app.wsgifunc()
+
 
 def generate_and_return_image(text, font_name, font_size):
     filepath = get_filepath(get_filename([text, font_name, font_size]))
@@ -26,6 +28,12 @@ def generate_and_return_image(text, font_name, font_size):
     ).save_image(filepath)
 
     return load_file(image_filepath)
+
+
+class index:
+    def GET(self):
+        render = web.template.render("templates/")
+        return render.index()
 
 
 class api_v1_string_to_image:
