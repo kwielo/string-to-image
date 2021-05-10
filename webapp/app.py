@@ -10,6 +10,8 @@ logger = logging.getLogger(__name__)
 
 urls = (
     '/', 'index',
+    '/string-to-image.png',  'api_v1_string_to_image',
+    '/json-to-image.png', 'api_v1_json_to_image',
     '/api/v1/string-to-image',  'api_v1_string_to_image',
     '/api/v1/json-to-image', 'api_v1_json_to_image',
 )
