@@ -6,5 +6,6 @@ WORKDIR /app
 COPY requirements.txt .
 COPY webapp/ .
 RUN python -m pip install -r requirements.txt
+RUN mkdir tmp/
 
 CMD ["python", "app.py"]
